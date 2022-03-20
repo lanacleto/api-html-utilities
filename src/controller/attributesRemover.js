@@ -1,7 +1,7 @@
 const { JSDOM } = require('jsdom');
 
 function attributesRemover(req, res) {
-  const { html } = req.body;
+  const { html } = req.body
 
   if (!html) res.status(400).json({ error: 'Missing html' });
   if (html.includes('<body' || html.includes('<head'))) res.status(400).json({ error: "Don't send body and head tags" });
